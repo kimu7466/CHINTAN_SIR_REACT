@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Foods</title>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
 <body>
-    <h1>purchase fruits</h1>
+    <div class="container">
+        <h1>Healthy Foods</h1>
+        <div class="input-container">
+            <input type="text" id="foodInput" placeholder="Enter Food Item">
+            <button onclick="addItem()" class="add-btn">Add</button>
+        </div>
+        <ul id="foodList">
+            <!-- List items will be dynamically generated here -->
+        </ul>
+        <p>Above is the list of healthy food..</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
