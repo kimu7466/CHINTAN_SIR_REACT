@@ -1,0 +1,12 @@
+this app is made with following commands
+
+1 -> npm install create-react-app
+
+2. -> npm create-react-app cwh-app
+
+
+we can also use
+2. -> npm create-react-app .
+
+to make app in current dir
+
