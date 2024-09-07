@@ -1,6 +1,7 @@
 import "./App.css";
 import Count from "./Components/count";
 import Input from "./Components/InputBox";
+import List from "./Components/List";
 import { useState } from "react";
 
 function App() {
@@ -10,14 +11,19 @@ function App() {
     setCount(count + 1);
   };
 
-  let [names, setName] = useState([]);
+  let [names, setName] = useState(["imroz","vishal", "aadil","neha","megha"]);
 
   const keyHandeler = (e) => {
     if (e.key == "Enter") {
       let data = e.target.value;
       let current = [...names, data];
       setName(current);
+      e.target.value = "" 
     }
+  };
+  const removeHandeler = (idx) => {
+    let newNames = names.filter((ele,index)=>index!=idx)
+    setName(newNames);
   };
 
   return (
@@ -26,6 +32,7 @@ function App() {
 
       <Count count={count}  update={updateCount}></Count>
       <Input names={names} keyHandeler={keyHandeler}></Input>
+      <List names={names} removeHandeler={removeHandeler}></List>
     </>
   );
 }
