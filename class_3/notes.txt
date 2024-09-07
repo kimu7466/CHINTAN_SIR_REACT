@@ -1,0 +1,8 @@
+virtual dom
+
+1. components
+2. fregment
+3. props
+4. state
+
+
