@@ -1,7 +1,7 @@
 function Form({ task, setTask, addTodos, isEditing }) {
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodos(task); // Call addTodos or editTodos based on the state
+    addTodos(task); 
   };
 
   return (
@@ -10,7 +10,7 @@ function Form({ task, setTask, addTodos, isEditing }) {
       <form onSubmit={handleSubmit}>
         <textarea
           value={task}
-          onChange={(e) => setTask(e.target.value)} // Update task state on input change
+          onChange={(e) => setTask(e.target.value)}
         />
         <br />
         <button type="submit">{isEditing ? "Update Task" : "Add Task"}</button>
