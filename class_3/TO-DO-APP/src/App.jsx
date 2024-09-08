@@ -3,12 +3,22 @@ import Form from "./Components/Form";
 import List from "./Components/List";
 
 function App() {
-  let [todos, setTodos] = useState(["task 1", "task 2"]);
-  let [task, setTask] = useState("");
+  const [todos, setTodos] = useState(["task 1", "task 2"]);
+  const [task, setTask] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [editIndex, setEditIndex] = useState(null);
 
   const addTodos = (task_) => {
     if (task_.trim() !== "") {
-      setTodos([...todos, task_]);
+      if (isEditing) {
+        const updatedTodos = [...todos];
+        updatedTodos[editIndex] = task_;
+        setTodos(updatedTodos);
+        setIsEditing(false);
+        setEditIndex(null);
+      } else {
+        setTodos([...todos, task_]);
+      }
       setTask("");
     }
   };
@@ -19,14 +29,26 @@ function App() {
     setTodos(newTodos);
   };
 
+  const editTodos = (idx) => {
+    setTask(todos[idx]);
+    setIsEditing(true);
+    setEditIndex(idx);
+  };
+
   return (
     <div className="inner">
-      <Form task={task} setTask={setTask} addTodos={addTodos} />
+      <Form
+        task={task}
+        setTask={setTask}
+        addTodos={addTodos}
+        isEditing={isEditing}
+      />
+
       <hr />
-      <List todos={todos} deleteTodos={deleteTodos} />
+
+      <List todos={todos} deleteTodos={deleteTodos} editTodos={editTodos} />
     </div>
   );
 }
 
 export default App;
-
