@@ -1,0 +1,55 @@
+#Root{
+    height: auto;
+    width: 700px;
+    place-content: center;
+}
+
+.inner{
+    width: fit-content;
+    margin: 20px auto;
+    border: 1px solid gray;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+textarea{
+    width: 651px;
+    height: 88px;
+}
+
+ul{
+    background-color: aqua;
+    padding: 30px;
+    width: 600px;
+    font-weight:600;
+}
+
+li{
+    background-color: aquamarine;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+
+button{
+    padding: 5px 8px;
+    font-weight:600;
+    margin-right: 10px;
+    background-color: lightgreen;
+}
+
+#remove{
+    background-color: rgb(254, 104, 104);
+}
+
+#edit{
+    background-color: lightblue;
+}
+
+.fit{
+    max-width: 300px;
+    overflow: hidden;
+    display: flex;
+}
