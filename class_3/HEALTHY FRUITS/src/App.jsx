@@ -5,39 +5,38 @@ function App() {
   const [foods, setFoods] = useState(["ghee", "chana", "chicken"]);
 
   const addFood = (e) => {
-    if (e.key === "Enter") {
-      let data = e.target.value;
-      let current = [...foods, data];
-      setFoods(current);
-      e.target.value = "";
-      let newBools = [...bools, false];
-      setBools(newBools);
+    if (e.target.value != "") {
+      if (e.key === "Enter") {
+        let data = e.target.value;
+        let current = [...foods, data];
+        setFoods(current);
+        e.target.value = "";
+        let newBools = [...bools, false];
+        setBools(newBools);
+      }
     }
   };
 
   const buyItem = (idx) => {
+    let list = document.querySelectorAll(".cls");
 
-    let list = document.querySelectorAll(".cls")
-
-    bools.forEach((ele,index)=>{
-      if(index===idx){
-        if (bools[index] === true){
-          bools[index] = false
-        } 
-        else{
-          bools[index] = true
+    bools.forEach((ele, index) => {
+      if (index === idx) {
+        if (bools[index] === true) {
+          bools[index] = false;
+        } else {
+          bools[index] = true;
         }
       }
-    })
+    });
 
-    for(let i = 0; i<bools.length ; i++){
-      if (bools[i]===true){
-        list[i].classList.add("active")
-      }else{
-        list[i].classList.remove("active")
+    for (let i = 0; i < bools.length; i++) {
+      if (bools[i] === true) {
+        list[i].classList.add("active");
+      } else {
+        list[i].classList.remove("active");
       }
     }
-    
   };
 
   return (
