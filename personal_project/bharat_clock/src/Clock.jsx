@@ -5,15 +5,15 @@ const Clock = () => {
 
   useEffect(() => {
     const timerId = setInterval(() => {
-      // Get the current time in IST by adjusting for the time zone difference.
+      
       const now = new Date();
-      const offset = now.getTimezoneOffset() * 60000; // Get the time zone offset in milliseconds
-      const istTime = new Date(now.getTime() + offset + 5.5 * 60 * 60000); // IST is GMT+5:30
+      const offset = now.getTimezoneOffset() * 60000; 
+      const istTime = new Date(now.getTime() + offset + 5.5 * 60 * 60000); 
 
       setTime(istTime);
     }, 1000);
 
-    return () => clearInterval(timerId); // Cleanup the interval on component unmount
+    return () => clearInterval(timerId); 
   }, []);
 
   const formatTime = (time) => {
