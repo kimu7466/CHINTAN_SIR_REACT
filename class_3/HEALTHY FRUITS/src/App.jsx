@@ -2,7 +2,8 @@ import { useState } from "react";
 
 function App() {
   const [bools, setBools] = useState([false, false, false]);
-  const [foods, setFoods] = useState(["ghee", "chana", "chicken"]);
+  const [foods, setFoods] = useState(["burger", "pizza", "paneer"]);
+  const [state, setstate] = useState("buy")
 
   const addFood = (e) => {
     if (e.target.value != "") {
@@ -33,8 +34,10 @@ function App() {
     for (let i = 0; i < bools.length; i++) {
       if (bools[i] === true) {
         list[i].classList.add("active");
+        // setstate("remove")
       } else {
         list[i].classList.remove("active");
+        // setstate("buy")
       }
     }
   };
@@ -48,7 +51,14 @@ function App() {
           {foods.map((ele, idx) => (
             <li className="cls" key={idx}>
               {ele}
-              <button onClick={() => buyItem(idx)}>Buy</button>
+              <button onClick={() => buyItem(idx)}>
+                {/* if(bools[idx]===true){
+                  "buy"
+                }else{
+                  "remove"
+                } */}
+                buy
+                </button>
             </li>
           ))}
         </ul>
