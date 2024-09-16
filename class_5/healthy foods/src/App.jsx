@@ -3,8 +3,8 @@ import FoodList from "./components/FoodList";
 import AddFood from "./components/AddFood";
 
 function App() {
-  const [bools, setBools] = useState([false, false, false]);
-  const [foods, setFoods] = useState(["burger", "pizza", "paneer"]);
+  const [bools, setBools] = useState([]);
+  const [foods, setFoods] = useState([]);
 
   const addFood = (e) => {
     if (e.target.value !== "") {
@@ -25,14 +25,15 @@ function App() {
   };
 
   return (
+    <>
     <div className="main">
       <h1>Healthy Foods</h1>
       <AddFood addFood={addFood} />
       <FoodList foods={foods} bools={bools} buyItem={buyItem} />
+    </div>
       <div className="message">
         <p>Above is the list of Healthify Food.</p>
-      </div>
-    </div>
+      </div></>
   );
 }
 
