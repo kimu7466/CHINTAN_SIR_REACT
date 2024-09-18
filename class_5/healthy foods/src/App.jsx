@@ -29,11 +29,11 @@ function App() {
   return (
     <>
       <div className="main">
-        <Title></Title>
+        <Title/>
         <AddFood addFood={addFood} />
         <FoodList foods={foods} bools={bools} buyItem={buyItem} />
       </div>
-      <Message></Message>
+      <Message/>
     </>
   );
 }
