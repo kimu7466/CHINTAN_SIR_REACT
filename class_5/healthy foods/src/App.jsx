@@ -1,6 +1,8 @@
 import { useState } from "react";
 import FoodList from "./components/FoodList";
 import AddFood from "./components/AddFood";
+import Title from "./components/Title";
+import Message from "./components/Message";
 
 function App() {
   const [bools, setBools] = useState([]);
@@ -26,14 +28,13 @@ function App() {
 
   return (
     <>
-    <div className="main">
-      <h1>Healthy Foods</h1>
-      <AddFood addFood={addFood} />
-      <FoodList foods={foods} bools={bools} buyItem={buyItem} />
-    </div>
-      <div className="message">
-        <p>Above is the list of Healthify Food.</p>
-      </div></>
+      <div className="main">
+        <Title></Title>
+        <AddFood addFood={addFood} />
+        <FoodList foods={foods} bools={bools} buyItem={buyItem} />
+      </div>
+      <Message></Message>
+    </>
   );
 }
 
