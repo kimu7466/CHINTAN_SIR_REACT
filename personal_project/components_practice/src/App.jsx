@@ -4,10 +4,10 @@ import "./components/App.css";
 
 function App() {
   return (
-    <>
+    <div  className="container">
       <Title />
       <Count />
-    </>
+    </div>
   );
 }
 

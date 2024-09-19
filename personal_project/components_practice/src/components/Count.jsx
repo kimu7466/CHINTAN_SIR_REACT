@@ -4,14 +4,14 @@ function Count() {
   let [x, setX] = useState(0);
 
   const increment = () => {
-    setX(x + 1);  // Updates the state
-    console.log(x); // Logs the current state
+    setX(x + 1);  
+    console.log(x); 
   };
 
   return (
     <>
       <p>{x}</p>
-      <button onClick={increment}>Increment</button>  {/* Button to trigger the increment */}
+      <button align="center" className="btn btn-primary" onClick={increment}>Increment</button> 
     </>
   );
 }
