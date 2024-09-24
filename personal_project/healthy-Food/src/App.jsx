@@ -13,7 +13,6 @@ const App = ()=>{
     const inputHandler = (e)=>{
       if(e.key==='Enter')
       {
-        
         const newArr = [...fooditems,e.target.value]
         setfooditems(newArr)
       }
