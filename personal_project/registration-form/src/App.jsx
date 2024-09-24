@@ -13,11 +13,17 @@ function App() {
     }
   }
 
+  const removeStudents= (idx)=>{
+    let new_students = [...students]
+    new_students.splice(idx, 1)
+    setstudents[new_students]
+  }
+
   return (
     <div className='container mt-5'>
     <Title></Title>
-    <Input addStudent={addStudent}></Input>
-    <List students={students}></List>
+    <Input addStudent={addStudent} ></Input>
+    <List students={students} removeStudents={removeStudents}></List>
     </div>
   )
 }

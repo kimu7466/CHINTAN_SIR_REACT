@@ -1,6 +1,6 @@
 import Item from './Item';
 
-function List({ students }) {
+function List({ students , removeStudents}) {
   return (
     <>
       {students.map((ele, idx) => (
@@ -9,6 +9,7 @@ function List({ students }) {
           stname={ele.name}
           stmobile={ele.mobile}
           stemail={ele.email}
+          removeStudents={removeStudents}
         />
       ))}
     </>
