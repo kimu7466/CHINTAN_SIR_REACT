@@ -25,16 +25,16 @@ function Input({addStudent}) {
     return <div className="container">
     <div className="row">
     <div className="col-3">
-    <input type="text" placeholder="Enter Your Name" className="form-control" onChange={onNameChange}/>
+    <input type="text" placeholder="Enter Your Name" className="form-control" onChange={onNameChange} value={name}/>
     </div>
     <div className="col-3">
-    <input type="text"  placeholder="Enter Your Email" className="form-control" onChange={onEmailChange}/>
+    <input type="text"  placeholder="Enter Your Email" className="form-control" onChange={onEmailChange} value={email}/>
     </div>
     <div className="col-3">
-    <input type="text"  placeholder="Enter Your mobile" className="form-control" onChange={onMobileChange}/>
+    <input type="text"  placeholder="Enter Your mobile" className="form-control" onChange={onMobileChange} value={mobile}/>
     </div>
     <div className="col-3" align='center'>
-    <button className="btn btn-success" onClick={()=>{addStudent(name, email, mobile)}}>Add</button>
+    <button className="btn btn-success" onClick={()=>{addHandeler()}}>Add</button>
     </div>
     </div>
     <hr />

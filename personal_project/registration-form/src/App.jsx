@@ -7,8 +7,10 @@ function App() {
   const [students, setstudents] = useState([])
 
   const addStudent = (name_, email_, mobile_)=>{
-    setstudents([...students, {name:name_, email:email_, mobile:mobile_}])
-    console.log(students);
+    if (name_ || email_ || mobile_){
+      setstudents([...students, {name:name_, email:email_, mobile:mobile_}])
+      console.log(students);
+    }
   }
 
   return (
