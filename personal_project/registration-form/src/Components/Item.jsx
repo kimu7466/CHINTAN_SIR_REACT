@@ -1,5 +1,5 @@
 
-function Item({ stname, stemail, stmobile , removeStudents}) {
+function Item({idx, stname, stemail, stmobile , removeStudents}) {
   return (
     <div className="container mt-5">
       <div className="row">
@@ -13,7 +13,7 @@ function Item({ stname, stemail, stmobile , removeStudents}) {
           <span>{stmobile}</span>
         </div>
         <div className="col-3">
-          <button className="btn btn-danger" >Remove</button>
+          <button className="btn btn-danger" onClick={()=>removeStudents(idx)}>Remove</button>
         </div>
       </div>
     </div>

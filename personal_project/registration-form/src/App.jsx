@@ -9,16 +9,14 @@ function App() {
   const addStudent = (name_, email_, mobile_)=>{
     if (name_ || email_ || mobile_){
       setstudents([...students, {name:name_, email:email_, mobile:mobile_}])
-      console.log(students);
     }
   }
 
   const removeStudents= (idx)=>{
-    let new_students = [...students]
+    let new_students = [...students]    
     new_students.splice(idx, 1)
-    setstudents[new_students]
+    setstudents(new_students)
   }
-
   return (
     <div className='container mt-5'>
     <Title></Title>

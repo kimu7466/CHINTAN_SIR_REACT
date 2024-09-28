@@ -6,6 +6,7 @@ function List({ students , removeStudents}) {
       {students.map((ele, idx) => (
         <Item
           key={idx}
+          idx={idx}
           stname={ele.name}
           stmobile={ele.mobile}
           stemail={ele.email}
